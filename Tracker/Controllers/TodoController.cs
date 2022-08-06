@@ -27,5 +27,11 @@ namespace Tracker.Controllers
             var result = _todoRepository.AddTodo(model);
             return Ok(result);
         }
+        [HttpDelete("")]
+        public IActionResult DeleteTodo(int id)
+        {
+            var result = _todoRepository.DeleteTodo(id);
+            return Ok(result);
+        }
     }
 }

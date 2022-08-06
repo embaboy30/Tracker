@@ -31,5 +31,10 @@ namespace Tracker.Repository
 
             return todo.Id;
         }
+        public int DeleteTodo(int id)
+        {
+            _trackerDbContext.Todo.Remove(new Todo() { Id = id });
+            return _trackerDbContext.SaveChanges();
+        }
     }
 }
